@@ -1,0 +1,81 @@
+.header{
+    background-color: $defaultBackground;
+    height: 88px;
+   border-bottom: 1px solid $borderMain;
+   display: flex;
+   align-items: center;
+   
+   &__menu-right::before{
+    content: '';
+    border: 2px solid $borderAdditional;
+    display: flex;
+    height: 32px;
+    position: absolute;
+    margin: 0 0 0 -20px;
+    align-self: center;
+    border-radius: 8px;
+    }
+    &__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    }
+   
+    &__menu__button:last-child{
+        margin-right: 0;
+    }
+    &__img{
+        width: 100%
+      
+    }
+    &__menu-left{
+       
+        display: flex;
+        align-items: center;
+    }
+    &__menu-right{
+        width: 35%;
+        display: flex;
+        overflow: scroll;
+       
+    }
+    &__line{
+        width: 2px;
+        height: 40px;
+        background-color: $textColor;
+        margin-right: 17px;
+    
+    }
+    
+}
+@media (min-width: $widthTelephone) and (max-width: $widthTable) { 
+
+    .header{
+
+        &__menu-right {
+            width: auto;
+        }
+       
+        &__menu-right::before{
+            display: none;
+        
+     }
+    }
+    }
+    @media (min-width: $widthTableStart){
+        .header{
+            visibility: hidden;
+    height: 0;
+    padding: 0;
+    margin: 0;
+            &__menu-right {
+                margin-left: auto;
+                width: auto;
+            }
+        }
+    }
+
+
+

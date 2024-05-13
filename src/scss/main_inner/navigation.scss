@@ -1,0 +1,319 @@
+.navigation {
+    position: fixed;
+    background-color: $defaultBackground;
+    min-height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+
+    &__help-button{
+        display: flex;
+        width: 40px;
+        height: 40px;
+        background-color: $colorPink;
+        border: unset;
+        border-radius: 50%;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+    }
+    &__help-button{
+        margin-right: 17px;
+    }
+
+    &.open_modalka {
+        transform: translateX(0);
+        box-shadow: 0px 0px 35px -5px $textColor;
+    }
+
+    &__head {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 16px;
+        justify-content: space-between;
+    }
+
+    
+
+    &__logo {
+        margin-right: auto;
+        padding-left: 16px;
+    }
+
+    &__button {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        background-color: $colorPink;
+        border: unset;
+        border-radius: 50%;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.3s ease;
+
+        &:hover {
+            transform: scale(0.9);
+        }
+
+        &:active {
+            background-color: $colorRed;
+        }
+    }
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+    
+    }
+    &__list.language{
+        display: flex;
+        
+        }
+        &__link-language-inner,&__link-language,abbr {
+            text-decoration: none;
+            color: $defaultTextColor;
+        }
+        &__link-language{
+            padding-right: 5px;
+        }
+        &__button.navigation-button-left{
+            margin-right: 15px;
+            
+        }
+        &__bottom{
+            bottom: 0;
+            position: absolute;
+        }
+        &__link{
+            padding-bottom:1.7em ;
+            cursor: pointer;
+        }
+        &__number a{
+            font-weight: 800;
+            font-size: 24px;
+            margin-top: 13px;
+            color: $defaultTextColor;
+            text-decoration: none;
+        }
+        &__number{
+            margin-top: 13px;
+            margin-bottom: 20px;
+        }
+        &__link:last-child{
+            padding-bottom:0 ;
+        }
+        &__link-email{
+            text-decoration: none;
+            color: $defaultTextColor;
+            transition: 0.3s ease;
+        }
+        
+        &__list &__link a:hover::before{
+                content: '';
+                display: block;
+                width: 2px;
+                height: 32px;
+                background-color: $colorLine; 
+                position: absolute;
+                left: 0;
+                border-top-right-radius: 20px; 
+                border-bottom-right-radius: 20px; 
+                margin-top: -5px;
+                transform: translate(-17px);
+        }
+        &__list &__link a{
+            transition: 0.3s ease;
+        }
+        &__list &__link a:hover{
+            color: $textColor;
+            transform: scaleX(10px);
+            
+        }
+        &__list &__link a:active {
+            color: $colorRed;
+            padding-left: 5px;
+        }
+        
+        &__list &__link a:visited{ 
+            color: $visitedLink;
+            opacity: 0.6;
+        }
+        &__button:hover{
+        transform: scale(0.9);
+        transition: 0.3s ease;
+        
+        }
+        &__button:active:focus{
+            background-color: $colorRed;
+        }
+        &__bottom__button {
+            display: flex;
+            margin-bottom: 13px;
+        }
+        &__list.language &__link-language a:hover{
+            opacity: 0.8;
+            transition: 0.3s ease;
+        }
+        &__list.language &__link-language a abbr:active{
+            color: $colorPink;
+            transition: 0.3s ease;
+        }
+        &__list.language &__link-language a abbr:visited{
+            color: $colorPink;  
+        }
+        &__link-email:hover{
+            padding-left: 5px;
+            transition: 0.3s ease;
+        }
+        &__link-email:active{
+            color: $colorPink;
+            transition: 0.3s ease;
+        }
+        
+        &__number a:hover{
+        opacity: 0.8;
+            transition: 0.3s ease;
+        }
+        &__number a:active{
+        color: $colorPink;
+            transition: 0.3s ease;
+        }
+        
+        }
+
+@media (min-width: $widthTelephone) and (max-width: $widthTable) { 
+
+    .navigation{
+        &__help-button.third-menu {
+            order: -3; 
+        }
+        &__help-button.forth-menu {
+            order: -2; 
+        }
+        &__help-button.fifth-menu {
+            order: -1; 
+            margin-right: 37px;
+        }
+        
+        &__help-button.fifth-menu::after {
+            content: '';
+            border: 2px solid $borderAdditional;
+            display: flex;
+            height: 32px;
+            position: absolute;
+            margin: 0 0 0 79px;
+            align-self: center;
+            border-radius: 8px;
+            }
+    }
+    
+      
+    
+ }
+ 
+    @media (min-width: $widthTelephone) { 
+        
+    .navigation{
+        width: 320px;
+        
+    }
+       
+    }
+        
+        @media (min-width: $widthTelephoneModal) { 
+            .navigation{
+                &__button.modalka_button{
+                    position: absolute;
+                    top: 38px;
+                    left: -68px;
+                }
+            }
+           
+            
+            
+        }
+
+        @media (min-width: $widthTableStart) { 
+            .navigation {
+                &__help-button.first-menu,
+                &__help-button.second-menu {
+                    visibility: visible;
+                    margin-top: 134px;
+                    height: 40px;
+                }
+            
+                
+                &__help-button.third-menu,
+                &__help-button.forth-menu,
+                &__help-button.fifth-menu {
+                    display: none;
+                }
+            
+                    
+                    &__help-button.header{
+                        margin-right: 165px;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    &__help-button.header:nth-child(2){
+                        margin-right:0px;
+                    }
+                    &__help-button.first-menu,.second-menu{
+                        visibility: visible;
+                        margin-top: 134px;
+                        height: 40px;
+                    }
+                    &__help-button.first-menu::before{
+                        content: 'Оставить заявку';
+                        display: flex;
+                        height: 32px;
+                        position: absolute;
+                        margin: 0 0 0 -180px;
+                       align-items: center;
+                       
+                       font-weight: 500;
+                       font-size: 16px;
+                       
+                        }
+                        &__help-button.second-menu::before{
+                            content: 'Статус ремонта';
+                            display: flex;
+                            height: 32px;
+                            position: absolute;
+                            margin: 0 0 0 -180px;
+                           align-items: center;
+                           
+                       font-weight: 500;
+                       font-size: 16px;
+                       
+                            }   
+            }
+            
+            
+            
+                 
+                }
+        
+        
+        @media (min-width: $widthDesktop) { 
+            .navigation{
+                position: sticky;
+                transform: translateX(0);
+                box-shadow: 0px 0px 0px 0px;
+
+                &__button.cross{
+                    display: none;
+                }
+            }
+            
+            
+        }
+        

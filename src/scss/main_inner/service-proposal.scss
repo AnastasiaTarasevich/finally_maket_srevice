@@ -1,0 +1,36 @@
+.service-proposal{
+    &__button{
+        display: flex;
+        align-items: center;
+        border: unset;
+        background-color: inherit;
+        padding: 0;
+    }
+    &__button:active:focus:hover{
+        padding-left: 5px;
+        transition: all 0.4s ease-in-out;
+    }
+    &__button-text{
+        padding: 0;
+        font-weight: 600;
+        font-family: $MediunFont;
+        font-size: 14px;
+    }
+    &__info{
+            max-width: 75%;
+    }
+}
+@media (min-width: $widthTelephone) { 
+    .service-proposal{
+        &__info{
+            max-width: 421px;
+        
+    }
+      
+        &__info {
+            max-width: 421px;
+        }
+    }
+    
+    
+}

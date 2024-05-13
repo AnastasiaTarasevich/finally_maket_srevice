@@ -1,0 +1,46 @@
+.card{
+    &__service{
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        gap: 6em;
+        align-items: center;
+        padding: 9px 16px;
+        margin: 0;
+        position: relative; 
+    font-size: 14px;
+    }
+    &__service:not(:first-child){
+        background-color: $defaultBackground;
+    }
+    &__service__items{
+        flex: 1; 
+        position: relative;
+    }
+    &__service:nth-child(2){
+        border-radius: 10px 10px 0 0;
+    }
+    &__service:last-child{
+        border-radius: 0 0 10px 10px;
+    }
+    &__service:not(:first-child):not(:last-child)::after{
+        background-color: $defaultBackground;
+        content: '';
+        position: absolute;
+        left: 16px;
+        bottom: 0;
+        border-bottom: 1px solid $borderAdditional;
+        right: 16px;
+    }
+    
+    &__service-info{
+        margin: 0;
+    }
+    &__service.first{
+        color:$textColor;
+        ;
+    }
+    
+    }
+    
+
