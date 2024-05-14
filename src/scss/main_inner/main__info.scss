@@ -22,34 +22,34 @@
     }
     &__navigation-list{
         margin: 0;
-        padding: 0;
+        padding: 2px 0px 3px 3px;
         display: flex;
     overflow: scroll;
+    gap:2px;
     }
     
     &__link{
+        text-align: center;
         text-decoration: none;
         display: flex;
-        padding: 12px 12px;
+        padding: 12px 9px;
         color: #7E7E82;
         font-weight: 500;
-        
+       
     }
     
     &__link:focus{
     background-color: $liBackground;
-    border: 2px solid $colorLine;
-      text-align: center;
+    outline: 2px solid $colorLine;
       margin: 0;
-      border-radius: 7px;
+      border-radius: 6px;
     }
     
     &__link:hover{
         background-color: $liBackground;
-    border: 2px solid $colorLine;
-      text-align: center;
+        outline: 2px solid $colorLine;
       margin: 0;
-      border-radius: 7px;
+      border-radius: 6px;
     }
     
     &__description {
