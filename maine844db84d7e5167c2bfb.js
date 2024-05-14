@@ -75,6 +75,8 @@ function brand_list() {
 ;// CONCATENATED MODULE: ./scripts/part_of_main/modalka/modalka.js
 function modalka() {
   var openModalButton = document.querySelector('.navigation__help-button.header.third-menu');
+  var openModalButtonDes = document.querySelector('.navigation__button.navigation-button-left.telephone_modal');
+  var openModalButtonDesMes = document.querySelector('.navigation__button.navigation-button-left.message_modal');
   var telephoneModal = document.querySelector('.modalka.telephone');
   var openModalButtonMess = document.querySelector('.navigation__help-button.header.forth-menu');
   var messageModal = document.querySelector('.modalka.message');
@@ -92,7 +94,21 @@ function modalka() {
     overlay.classList.remove('visible');
     document.body.removeChild(overlay);
   }
+  function handleKeydown(event) {
+    if (event.key === 'Escape' || event.key === ' ') {
+      if (telephoneModal.classList.contains('open_modalka')) {
+        closeModal(telephoneModal);
+        event.preventDefault();
+      } else if (messageModal.classList.contains('open_modalka')) {
+        closeModal(messageModal);
+        event.preventDefault();
+      }
+    }
+  }
   openModalButton.addEventListener('click', function () {
+    openModal(telephoneModal);
+  });
+  openModalButtonDes.addEventListener('click', function () {
     openModal(telephoneModal);
   });
   var closeModalButton = telephoneModal.querySelector('.navigation__button.modalka_button');
@@ -100,6 +116,9 @@ function modalka() {
     closeModal(telephoneModal);
   });
   openModalButtonMess.addEventListener('click', function () {
+    openModal(messageModal);
+  });
+  openModalButtonDesMes.addEventListener('click', function () {
     openModal(messageModal);
   });
   var closeModalButtonMes = messageModal.querySelector('.navigation__button.modalka_button');
@@ -113,6 +132,7 @@ function modalka() {
   closeModalButtonMenu.addEventListener('click', function () {
     closeModal(menuModal);
   });
+  document.addEventListener('keydown', handleKeydown);
 }
 
 ;// CONCATENATED MODULE: ../node_modules/swiper/shared/ssr-window.esm.mjs
